@@ -1,0 +1,62 @@
+<%- include("header.ejs")%>
+<%- include("nav.ejs")%>
+<style>
+    body{
+  width: 100%;
+  height: 90%;
+  /* display: inline; */
+  background-color: darksalmon;
+
+  
+  
+}
+nav{
+  background-color: aliceblue;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: -1%;
+}
+nav a{
+  font-size: 20px;
+}
+html,body{
+  width: 100%;
+  height: 100%;}
+
+ .card{
+  /* margin: 50px; */
+  width: 250px;
+  height: 300px;
+  background-color: linen;
+  text-align: center;
+  border-radius: 20px;
+  margin:  40px;
+  display: inline-block;
+  
+  
+}
+.card h2{
+    padding: 5px;
+}
+ .card a{
+  
+  color: grey;
+
+  
+}
+</style>
+<h1>Books</h1>
+<% book.forEach((e)=>{ %>
+    <div class="card">
+        <h2><%= e.name%></h2>
+        <h2><%= e.author%></h2>
+        <h2><%= e.image%></h2>
+        
+        <a href="/details/<%= e._id%>">Explore more</a>
+    </div>
+        <%})%>
+    <%- include("footer.ejs")%>

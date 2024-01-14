@@ -1,0 +1,76 @@
+<%- include("header.ejs")%>
+<%- include("nav.ejs")%>
+<style>
+    #update{
+  width: 100%;
+  height: 100%;
+  background-image: url("https://images.unsplash.com/photo-1620843002805-05a08cb72f57?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXBkYXRlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60");
+  background-position: center;
+  background-repeat: no-repeat;
+ background-size: 100%;
+ padding:  20px 50px;
+ 
+}
+#update form{
+  background-color: blanchedalmond;
+  width: 400px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  border-radius: 20px;
+  }
+  
+  #update form input{
+    padding: 8px 30px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    
+  }
+  #update form textarea{
+    padding: 10px 27px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+  }
+  #update form button{
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+  }
+  nav{
+  background-color: aliceblue;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: -1%;
+}
+nav a{
+  font-size: 20px;
+}
+html,body{
+  width: 100%;
+  height: 100%;}
+</style>
+<div id="update">
+    <form action="/update/<%= book._id%>" method="POST">
+        <h2>update Book</h2>
+        
+        <input value="<%= book.image%>" type="url" name="image" placeholder="image"><br>
+        <input value="<%= book.name%>" type="text" name="name" placeholder="name"><br>
+        <input value="<%= book.author%>" type="text" name="author" placeholder="author"><br>
+        <textarea name="description"  placeholder="description"><%= book.id%></textarea><br>
+        <input value="<%= book.page%>" type="number" name="page" placeholder="page"><br>
+        <input value="<%= book.publication%>" type="text" name="publication" placeholder="publication"><br>
+        <input value="<%= book.year%>" type="number" name="year" placeholder="year"><br>
+        <input value="<%= book.prize%>" type="number" name="prize" placeholder="prize"><br>
+        <button>update</button><br>
+
+    </form>
+</div>
+<%- include("footer.ejs")%>

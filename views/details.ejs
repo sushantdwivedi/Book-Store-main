@@ -1,0 +1,88 @@
+<%- include("header.ejs")%>
+<%- include("nav.ejs")%>
+<style>
+    nav{
+  background-color: aliceblue;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: -1%;
+}
+nav a{
+  font-size: 20px;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+background: url("https://images.pexels.com/photos/247781/pexels-photo-247781.jpeg?auto=compress&cs=tinysrgb&w=600");
+background-repeat: no-repeat;
+background-size: cover;
+}
+    .book
+    {
+  width: 100%;
+  height: 100%;
+  background-color: lightgreen;
+  margin-top: -1.1%;
+  /* display: flex; */
+  /* align-items: center; */
+  padding: 50px 350px;
+  /* justify-items: center; */
+}
+ .detail{
+
+  width: 650px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  padding-left:100px ;
+  border-radius: 20px;
+  color: white; 
+}
+ .detail h2{
+  line-height: 0.1;
+}
+ .detail img{
+  width: 300px;
+}
+ /* .detail button{
+  padding: 10px 20px;
+  border-radius: 20px;
+  display: inline-block;
+} */
+ a{
+    
+    background-color: darkcyan;
+    border-radius: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+</style>
+
+
+
+<div class="detail">
+    <h2><%= book.name%></h2>
+<h2><%= book.author%></h2>
+<h2><%= book.description%></h2>
+<h2><%= book.page%></h2>
+<h2><%= book.publication%></h2>
+<h2><%= book.year%></h2>
+<h2><%= book.prize%></h2>
+
+</div>
+
+    <a href="/delete/<%= book._id%>">Delete</a>
+
+<a href="/update/<%= book._id%>">Update</a>
+
+
+
+
+
+<%- include("footer.ejs")%>
